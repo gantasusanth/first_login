@@ -1,0 +1,123 @@
+/* 1. Global Styles and Animated Background */
+:root {
+    --primary-color: #007bff; /* Blue */
+    --accent-color: #0056b3; /* Darker Blue */
+    --text-color: #333;
+    --card-bg-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
+    --font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite; /* Animated background */
+    color: var(--text-color);
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 2. Login Container (Card) */
+.login-card {
+    background-color: var(--card-bg-color);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.login-card:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+}
+
+h2 {
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* 3. Form Styling */
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Inner shadow for depth */
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Important for padding/width calculation */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3); /* Focus ring */
+    background-color: #fff;
+}
+
+/* 4. Button and Link Styling */
+.login-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    letter-spacing: 1px;
+}
+
+.login-button:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px); /* Button lift effect */
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+}
+
+.forgot-link {
+    margin-top: 20px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.2s ease;
+}
+
+.forgot-link:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
